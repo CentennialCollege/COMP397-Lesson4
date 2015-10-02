@@ -43,7 +43,7 @@ declare module createjs {
 
 
     export class Bitmap extends DisplayObject {
-        constructor(imageOrUrl: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | string);
+        constructor(imageOrUrl: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement | string | any);
 
         // properties
         image: HTMLImageElement | HTMLCanvasElement | HTMLVideoElement;

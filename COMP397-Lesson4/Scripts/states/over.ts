@@ -18,7 +18,7 @@
             this.addChild(this._levelLabel); // add label to the stage
 
             // back button
-            this._backButton = new objects.Button("BackButton", 220, 340);
+            this._backButton = new objects.Button("BackButton", 320, 340);
             this._backButton.on("click", this._clickBackButton, this); // event listener
             this.addChild(this._backButton);
 
@@ -28,6 +28,7 @@
 
 
         public update(): void {
+            this._levelLabel.rotation += 5;
         }
 
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++

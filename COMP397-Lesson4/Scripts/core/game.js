@@ -13,6 +13,7 @@
 /// <reference path="../states/game.ts" />
 /// <reference path="../states/menu.ts" />
 // GLOBAL GAME FRAMEWORK VARIABLES
+var assets;
 var canvas;
 var stage;
 var stats;
@@ -22,6 +23,18 @@ var currentState; // alias for our current state
 var menu;
 var game;
 var over;
+// manifest of all our assets
+var manifest = [
+    { id: "BackButton", src: "../../Assets/images/BackButton.png" },
+    { id: "NextButton", src: "../../Assets/images/NextButton.png" },
+    { id: "StartButton", src: "../../Assets/images/StartButton.png" }
+];
+function preload() {
+    assets = new createjs.LoadQueue();
+    assets.installPlugin(createjs.Sound);
+    assets.on("complete", init, this);
+    assets.loadManifest(manifest);
+}
 function init() {
     canvas = document.getElementById("canvas"); // reference to canvas element
     stage = new createjs.Stage(canvas); // passing canvas to stage
@@ -35,7 +48,7 @@ function init() {
 // Main Game Loop
 function gameLoop(event) {
     stats.begin(); // start counting
-    currentState.update();
+    currentState.update(); // calling State's update method
     stage.update(); // redraw/refresh stage every frame
     stats.end(); // stop counting
 }

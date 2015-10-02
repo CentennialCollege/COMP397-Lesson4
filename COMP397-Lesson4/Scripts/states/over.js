@@ -18,12 +18,13 @@ var states;
             this._levelLabel = new objects.Label("Game Over", "60px Consolas", "#000000", 320, 240);
             this.addChild(this._levelLabel); // add label to the stage
             // back button
-            this._backButton = new objects.Button("BackButton", 220, 340);
+            this._backButton = new objects.Button("BackButton", 320, 340);
             this._backButton.on("click", this._clickBackButton, this); // event listener
             this.addChild(this._backButton);
             stage.addChild(this);
         };
         Over.prototype.update = function () {
+            this._levelLabel.rotation += 5;
         };
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++
         // Callback function / Event Handler for Back Button Click

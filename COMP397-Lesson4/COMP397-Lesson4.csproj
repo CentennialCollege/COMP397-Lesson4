@@ -63,6 +63,10 @@
     <Content Include="Assets\images\NextButton.png" />
     <Content Include="Assets\images\StartButton.png" />
     <Content Include="packages.config" />
+    <Content Include="Assets\fonts\Dock51.ttf" />
+    <Content Include="Assets\audio\engine.ogg" />
+    <Content Include="Assets\audio\thunder.ogg" />
+    <Content Include="Assets\audio\yay.ogg" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,10 +92,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\audio\" />
-    <Folder Include="Assets\fonts\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\config\config.ts" />
     <TypeScriptCompile Include="Scripts\core\game.ts" />
