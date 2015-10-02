@@ -34,7 +34,8 @@ var over: states.Over;
 var manifest = [
     { id: "BackButton", src: "../../Assets/images/BackButton.png" },
     { id: "NextButton", src: "../../Assets/images/NextButton.png" },
-    { id: "StartButton", src: "../../Assets/images/StartButton.png" }
+    { id: "StartButton", src: "../../Assets/images/StartButton.png" },
+    { id: "yay", src: "../../Assets/audio/yay.ogg" }
 ];
 
 function preload(): void {

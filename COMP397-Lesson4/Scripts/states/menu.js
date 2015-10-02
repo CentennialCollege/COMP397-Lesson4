@@ -28,6 +28,7 @@ var states;
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++
         // Callback function / Event Handler for Start Button Click
         Menu.prototype._clickStartButton = function (event) {
+            createjs.Sound.play("yay"); // activate static class play 
             changeState(config.PLAY_STATE);
         };
         return Menu;
