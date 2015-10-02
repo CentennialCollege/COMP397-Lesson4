@@ -28,7 +28,7 @@ var states;
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++
         // Callback function / Event Handler for Start Button Click
         Menu.prototype._clickStartButton = function (event) {
-            this._helloLabel.text = "Clicked";
+            changeState(config.PLAY_STATE);
         };
         return Menu;
     })(objects.Scene);

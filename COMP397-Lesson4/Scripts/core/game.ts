@@ -12,6 +12,8 @@
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/scene.ts" />
 
+/// <reference path="../states/over.ts" />
+/// <reference path="../states/game.ts" />
 /// <reference path="../states/menu.ts" />
 
 
@@ -24,6 +26,8 @@ var currentState: objects.Scene; // alias for our current state
 
 // GAME OBJECTS
 var menu: states.Menu;
+var game: states.Game;
+var over: states.Over;
 
 
 function init():void {
@@ -35,7 +39,7 @@ function init():void {
     setupStats(); // sets up our stats counting
 
     state = config.MENU_STATE;
-    changeState();
+    changeState(state);
 }
 
 // Main Game Loop
@@ -64,25 +68,31 @@ function setupStats():void {
 
 
 // state machine prep
-function changeState(): void {
+function changeState(state): void {
     // Launch various scenes
 
     switch (state) {
         case config.MENU_STATE:
             // show the menu scene
+            stage.removeAllChildren();
             menu = new states.Menu();
-            console.log(menu);
             currentState = menu;
-
             break;
         case config.PLAY_STATE:
             // show the play scene
+            stage.removeAllChildren();
+            game = new states.Game();
+            currentState = game;
             break;
         case config.OVER_STATE:
             // show the game over scene
+            stage.removeAllChildren();
+            over = new states.Over();
+            currentState = over;
             break;
     }
 
     currentState.start();
+    console.log(currentState.numChildren);
 }
  
